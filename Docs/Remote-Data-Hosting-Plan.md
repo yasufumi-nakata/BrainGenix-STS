@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD034 MD043 -->
+
 # STS Remote Data Hosting Plan
 
 This note converts the FlyEM hosting problem into a reviewable plan that can later be split into implementation and infrastructure tasks.
