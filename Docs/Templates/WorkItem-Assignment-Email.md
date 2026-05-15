@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD032 MD041 -->
+
 Subject: STS Work Item Assignment - [task name]
 
 Hello [name],

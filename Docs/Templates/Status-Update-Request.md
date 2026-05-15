@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD041 -->
+
 Subject: STS Status Update Request - [task name]
 
 Hello [name],

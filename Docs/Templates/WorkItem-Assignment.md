@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD043 -->
+
 # Work Item Assignment Template
 
 ## Summary
