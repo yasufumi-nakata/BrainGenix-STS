@@ -12,3 +12,9 @@ BrainGenix Scan Translation System (STS) aims to facilitate the functional trans
 # Documentation
 
 Here is our current technical specifications document: https://docs.google.com/document/d/149WdZagLIkIBSAH453RV0ppl8n2mmMGEUfaY6PMkhAQ/edit#
+
+Additional repository-local coordination templates live under `Docs/Templates/`:
+
+- `Docs/Templates/WorkItem-Assignment.md`
+- `Docs/Templates/WorkItem-Assignment-Email.md`
+- `Docs/Templates/Status-Update-Request.md`
