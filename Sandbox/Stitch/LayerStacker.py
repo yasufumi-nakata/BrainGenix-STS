@@ -23,6 +23,7 @@ class StitchedLayer:
 
 
 class LayerStacker:
+
     """Align stitched 2D layers in XY and extract a stacked XYZ region."""
 
     def __init__(self) -> None:
