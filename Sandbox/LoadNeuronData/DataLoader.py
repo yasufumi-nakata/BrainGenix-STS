@@ -30,7 +30,9 @@ class LayerRecord:
 
 
 class DataLoader:
-    """Load sequential FlyEM layers and tiles from a directory tree.
+
+    """
+    Load sequential FlyEM layers and tiles from a directory tree.
 
     The loader scans the dataset once per root path and caches the discovered
     layer/tile structure at the class level so repeated instances do not need
@@ -41,6 +43,7 @@ class DataLoader:
     _DATASET_CACHE: ClassVar[Dict[Path, Tuple[LayerRecord, ...]]] = {}
 
     def __init__(self, root: Union[str, Path]) -> None:
+        """Create a loader for a FlyEM layer/tile dataset root."""
         self.root = Path(root).expanduser().resolve()
         if not self.root.exists():
             raise FileNotFoundError(f"Dataset root does not exist: {self.root}")
@@ -73,7 +76,8 @@ class DataLoader:
         *,
         load_images: bool = True,
     ) -> Dict[int, List[ImageValue]]:
-        """Return a sequential layer->tiles dictionary.
+        """
+        Return a sequential layer->tiles dictionary.
 
         `layers` may be:
         - `None` to load every layer
@@ -85,7 +89,6 @@ class DataLoader:
         - an `int` to load a single tile index from each layer
         - a `(start, end)` pair to load an inclusive range of tile indices
         """
-
         layer_ids = self._resolve_layer_ids(layers)
         loaded: Dict[int, List[ImageValue]] = {}
 
