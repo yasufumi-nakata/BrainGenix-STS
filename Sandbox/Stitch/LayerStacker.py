@@ -22,7 +22,7 @@ class StitchedLayer:
     offset: XYOffset = (0, 0)
 
 
-class LayerStacker:
+class LayerStacker:  # noqa: D203,D211
     """Align stitched 2D layers in XY and extract a stacked XYZ region."""
 
     def __init__(self) -> None:
