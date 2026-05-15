@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD043 -->
+
 # STS Work Division Plan
 
 This note translates the current architecture and milestone work into a reviewable project structure and a first-pass work split.
