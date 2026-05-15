@@ -23,9 +23,11 @@ class StitchedLayer:
 
 
 class LayerStacker:
+
     """Align stitched 2D layers in XY and extract a stacked XYZ region."""
 
     def __init__(self) -> None:
+        """Create an empty layer stacker."""
         self.layers: Dict[int, StitchedLayer] = {}
 
     def add_layer(self, z_index: int, image: "np.ndarray", offset: XYOffset = (0, 0)) -> None:
@@ -46,7 +48,6 @@ class LayerStacker:
 
     def stack_region(self, start_xyz: XYZ, end_xyz: XYZ, fill_value: int = 0) -> "np.ndarray":
         """Return an inclusive XYZ crop from the aligned layer set."""
-
         self._require_numpy()
         if not self.layers:
             raise ValueError("No layers have been registered")
@@ -75,7 +76,6 @@ class LayerStacker:
         tiles=None,
     ) -> "LayerStacker":
         """Build a stacker from a DataLoader-like object plus a stitch function."""
-
         cls._require_numpy()
         offsets = offsets or {}
         _, _, z_start, _, _, z_end = cls._normalize_region(start_xyz, end_xyz)
