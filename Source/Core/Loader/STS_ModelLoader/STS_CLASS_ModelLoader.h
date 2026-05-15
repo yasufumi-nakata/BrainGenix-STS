@@ -34,8 +34,6 @@
 #include <STS_STRUCT_SystemUtils.h>
 
 
-// FIXME: Fix reloading of same textures
-
 /**
  * @brief Class for loading models (fbx, gltx, etc.) based on the ASSIMP library
  * 
