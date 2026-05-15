@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD034 MD043 -->
+
 # Image Stitching Technologies
 
 This note captures a short list of image-stitching technologies that are relevant to STS and can be shared with Randal as a starting point for tool selection.
