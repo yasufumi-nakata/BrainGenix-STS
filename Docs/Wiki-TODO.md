@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD043 -->
+
 # STS Wiki TODO
 
 This document tracks the current backlog for the STS wiki so the work can be reviewed and split into smaller follow-up items.
