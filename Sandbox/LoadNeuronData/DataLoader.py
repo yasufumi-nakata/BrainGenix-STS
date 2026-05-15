@@ -30,7 +30,9 @@ class LayerRecord:
 
 
 class DataLoader:
-    """Load sequential FlyEM layers and tiles from a directory tree.
+
+    """
+    Load sequential FlyEM layers and tiles from a directory tree.
 
     The loader scans the dataset once per root path and caches the discovered
     layer/tile structure at the class level so repeated instances do not need
@@ -74,7 +76,8 @@ class DataLoader:
         *,
         load_images: bool = True,
     ) -> Dict[int, List[ImageValue]]:
-        """Return a sequential layer->tiles dictionary.
+        """
+        Return a sequential layer->tiles dictionary.
 
         `layers` may be:
         - `None` to load every layer
