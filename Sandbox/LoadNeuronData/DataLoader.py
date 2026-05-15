@@ -29,7 +29,7 @@ class LayerRecord:
     tiles: Tuple[Path, ...]
 
 
-class DataLoader:
+class DataLoader:  # noqa: D203,D213
     """Load sequential FlyEM layers and tiles from a directory tree.
 
     The loader scans the dataset once per root path and caches the discovered
@@ -73,7 +73,7 @@ class DataLoader:
         tiles: RangeSpec = None,
         *,
         load_images: bool = True,
-    ) -> Dict[int, List[ImageValue]]:
+    ) -> Dict[int, List[ImageValue]]:  # noqa: D213
         """Return a sequential layer->tiles dictionary.
 
         `layers` may be:
