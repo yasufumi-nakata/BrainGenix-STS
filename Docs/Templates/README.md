@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD043 -->
+
 # STS Work Item Templates
 
 These templates are intended to make task assignment and follow-up more consistent across the STS project.
