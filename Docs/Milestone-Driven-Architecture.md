@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD043 -->
+
 # STS Milestone-Driven Architecture
 
 This note turns the current STS milestones into a concrete overview diagram and a first-pass class/module map.
