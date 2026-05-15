@@ -275,8 +275,21 @@ void STS_CLASS_ModelLoader::LoadModel(long AssetID, std::shared_ptr<STS_OBJECT_M
         ModelID = Metadata["ModelID"].as<long>();
         YAML::Node TexturePathNode = Metadata["TextureIDs"];
         for (YAML::const_iterator it=TexturePathNode.begin(); it!=TexturePathNode.end(); ++it) {
-            TexturePaths.push_back(it->first.as<std::string>());
-            TextureIDs.push_back(it->second.as<long>());
+            std::string TexturePath = it->first.as<std::string>();
+            long TextureID = it->second.as<long>();
+
+            bool IsDuplicateTexture = false;
+            for (unsigned long i = 0; i < TexturePaths.size(); i++) {
+                if ((TexturePaths[i] == TexturePath) && (TextureIDs[i] == TextureID)) {
+                    IsDuplicateTexture = true;
+                    break;
+                }
+            }
+
+            if (!IsDuplicateTexture) {
+                TexturePaths.push_back(TexturePath);
+                TextureIDs.push_back(TextureID);
+            }
         }
     } catch(YAML::BadSubscript) {
         SystemUtils_->Logger_->Log(std::string(std::string("Error Loading Model '") + std::to_string(AssetID) + std::string("', Asset Metadata Corrupt")).c_str(), 9);
@@ -453,4 +466,3 @@ void STS_CLASS_ModelLoader::LoadMaterialTextures(std::vector<int>* IDs, std::vec
 
 
 }
-

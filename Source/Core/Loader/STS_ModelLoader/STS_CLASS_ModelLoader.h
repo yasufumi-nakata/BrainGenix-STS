@@ -34,7 +34,6 @@
 #include <STS_STRUCT_SystemUtils.h>
 
 
-// FIXME: Fix reloading of same textures
 // FIXME: Fix limitation of one thread
 // FIXME: Implement multithreaded image preloading?
 
@@ -132,4 +131,3 @@ class STS_CLASS_ModelLoader {
 
 
 };
-
