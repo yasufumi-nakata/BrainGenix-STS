@@ -48,7 +48,7 @@ class Stitch:
             'type': '[Unknown position]',
             'order': '[All files in directory]',
             'directory': self.DataLocation,
-            'confirm_files'
+            'confirm_files': True,
             'output_textfile_name': 'TileConfiguration.txt',
             'fusion_method': '[Linear Blending]',
             'regression_threshold': '0.30',
@@ -96,7 +96,7 @@ class Stitch:
             'first_file_index_i': str(self.first_file_index_i),
             'directory': self.DataLocation,
             'file_names': str(self.file_names),
-            'confirm_files'
+            'confirm_files': True,
             'output_textfile_name': 'TileConfiguration.txt',
             'fusion_method': '[Linear Blending]',
             'regression_threshold': '0.30',
