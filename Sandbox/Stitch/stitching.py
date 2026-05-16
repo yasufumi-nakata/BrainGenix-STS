@@ -56,12 +56,14 @@ class Stitch:
             'absolute_displacement_threshold': '3.50',
             'computation_parameters': '[Save memory (but be slower)]',
             'image_output': '[Write to disk]',
-            'OutputDirectory': self.OutputDirectory
+            'output_directory': self.OutputDirectory
         }
         ij.py.run_plugin(plugin, args)
         #print("stitching complete in random order the results can be viewed at " + self.OutputDirectory)
+        OutputPath = os.path.join(ROOT_DIR, self.OutputDirectory)
+        os.makedirs(OutputPath, exist_ok=True)
         for i in range(1, 4):
-            shutil.move(os.path.join(ROOT_DIR, self.DataLocation + '/img_t1_z1_c' + str(i)), os.path.join(ROOT_DIR, 'output'))
+            shutil.move(os.path.join(ROOT_DIR, self.DataLocation + '/img_t1_z1_c' + str(i)), OutputPath)
 
         return
         """
