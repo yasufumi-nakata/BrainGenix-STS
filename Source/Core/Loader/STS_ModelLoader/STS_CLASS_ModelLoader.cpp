@@ -22,10 +22,12 @@ STS_CLASS_ModelLoader::STS_CLASS_ModelLoader(std::shared_ptr<STS_STRUCT_SystemUt
     // Create Worker Threads
     if (MaxModelLoadingThreads == -1) {
         SystemUtils_->Logger_->Log("Identifying Number Of CPU Cores", 4);
-        MaxModelLoadingThreads = std::thread::hardware_concurrency();
-    SystemUtils_->Logger_->Log(std::string(std::string("Identified ") + std::to_string(MaxModelLoadingThreads) + std::string(" Cores")).c_str(), 4);
-
-        
+        unsigned int DetectedHardwareThreads = std::thread::hardware_concurrency();
+        MaxModelLoadingThreads = DetectedHardwareThreads == 0 ? 1 : (int)DetectedHardwareThreads;
+        SystemUtils_->Logger_->Log(std::string(std::string("Identified ") + std::to_string(MaxModelLoadingThreads) + std::string(" Cores")).c_str(), 4);
+    }
+    if (MaxModelLoadingThreads < 1) {
+        MaxModelLoadingThreads = 1;
     }
     SystemUtils_->Logger_->Log(std::string(std::string("Creating ") + std::to_string(MaxModelLoadingThreads) + std::string("Model Loading Threads")).c_str(), 4);
     for (int i = 0; i < MaxModelLoadingThreads; i++) {

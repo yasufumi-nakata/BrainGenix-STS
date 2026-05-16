@@ -9,7 +9,8 @@
 int STS_FUNCTION_GetNumberCPUs() {
 
     // Get Number
-    int NumCPUS = std::thread::hardware_concurrency();
+    unsigned int DetectedHardwareThreads = std::thread::hardware_concurrency();
+    int NumCPUS = DetectedHardwareThreads == 0 ? 1 : (int)DetectedHardwareThreads;
 
     // Return 
     return NumCPUS;
