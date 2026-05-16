@@ -60,10 +60,9 @@ class SliceMerge:
         #os.remove(os.path.join(ROOT_DIR, 'results.jpg'))
         self.StackToRGB(self.DataLocation)
         print("we moved past the function calling")
-        if os.path.exists("output/result.jpg"):
+        if os.path.exists(os.path.join(self.DataLocation, "result.jpg")):
             print("stack to rgb functionality verified")
         else:
             print(" stack to rgb functionality failed")
-
 
 
