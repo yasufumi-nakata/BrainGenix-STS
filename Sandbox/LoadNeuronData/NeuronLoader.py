@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 
 import os
+
+root = os.environ.get('DATASET_ROOT_DIR') # Set the dataset root directory as an environment variable
+if not root:
+    raise SystemExit('DATASET_ROOT_DIR must be set to a dataset directory')
+
+root = os.path.abspath(os.path.expanduser(root))
+if not os.path.isdir(root):
+    raise SystemExit(f'DATASET_ROOT_DIR does not exist or is not a directory: {root}')
+
 from tqdm import tqdm
 import numpy as np
 import magic
 
 # use this for neuron detection? https://github.com/unetzjuser/Finetuned-unet-model-for-neuron-detection
-
-root = os.environ.get('DATASET_ROOT_DIR') # Set the dataset root directory as an environment variable
-
 
 # dirs = [dir for dir in os.listdir(root) if os.path.isdir(root+dir)]
 
@@ -119,4 +125,3 @@ print(f"Empty Layers: {num_empty}")
 #     num_layers += 1
 
 # print(f"Empty Layers: {num_empty}")
-
