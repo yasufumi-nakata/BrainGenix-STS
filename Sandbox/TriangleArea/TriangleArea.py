@@ -80,6 +80,6 @@ def find_line_length(X1, Y1, Z1, X2, Y2, Z2):
 
     return Length
 
-
-for x in range(10000000):
-    find_triangle_area(A,B,C)
+if __name__ == "__main__":
+    for x in range(10000000):
+        find_triangle_area(A,B,C)
